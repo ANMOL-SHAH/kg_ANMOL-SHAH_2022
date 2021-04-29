@@ -27,16 +27,23 @@ function getSubOutput(num) {
     }
 }
 
-//checks for length of input array if array is not empty then checks for exceptions
-if (nums.length > 0) {
-    //loops through elements of input array
-    nums.forEach(num => {
-        getSubOutput(num);
-    });
-    //Prints output in stdout
-    // Output variable stores array of strings
-    console.log(output);
-} else {
-    //if array is empty 
-    process.stdout.write("Size of Input is 0");
+//Handle Exceptions by try catch block
+try {
+    //checks for length of input array if array is not empty then checks for exceptions
+    if (nums.length > 0) {
+        //loops through elements of input array
+        nums.forEach(num => {
+            getSubOutput(num);
+        });
+        //Prints output in stdout
+        // Output variable stores array of strings
+        console.log(output);
+    } else {
+        //if array is empty 
+        process.stdout.write("Size of Input is 0");
+    }
+
+}
+catch (error) {
+    process.stdout.write(error.message);
 }
